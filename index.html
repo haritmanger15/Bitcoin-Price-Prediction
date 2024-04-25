@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Sports TV</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+
+        h3 {
+            color: black;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .video-card {
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+          	transition: all 0.3s ease; /* Add a smooth transition for all properties over 0.3 seconds with ease timing function */
+        }
+
+        .video-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+         	background: #e7e7e7;
+          	transform: scale(1.05); /* Increase size on hover */
+    		opacity: 0.9; /* Reduce opacity on hover */
+    		width: 310px; /* Increase width on hover */
+        }
+
+        .video-card img {
+            width: 300px;
+            height: 220px;
+            object-fit: fit;
+            border-radius: 10px;
+        }
+
+        .video-card h3 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .video-card p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .video-card a {
+          	width: 60%;
+            display: inline-block;
+            padding: 05px;
+            background: black;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+            position: bottom;
+          	transition: all 0.3s ease; /* Add a smooth transition for all properties over 0.3 seconds with ease timing function */
+        }
+
+        .video-card a:hover {
+    		transform: scale(1.05); /* Increase size on hover */
+    		opacity: 0.9; /* Reduce opacity on hover */
+    		width: 70%; /* Increase width on hover */
+    		background-color: #333; /* Change background color on hover */
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: white;
+            font-family: 'Titillium Web', sans-serif;
+            /* Set Titillium as the font-family */
+            border-radius: 5px
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Align to the right */
+            padding: 10px; /* Adjust padding for medium size */
+        }
+
+        .search-bar input {
+            padding: 8px;
+            margin-right: 5px;
+            border-radius: 5px;
+            color: White;
+            font-size: 14px; /* Adjust font size for medium size */
+            background-color: #333; /* Match the background color */
+            width: 300px; /* Set a specific width */
+        }
+
+        .search-bar button {
+            display: none; /* Hide the search button */
+        }
+
+        .search-icon {
+            font-size: 18px;
+            color: #fff; /* Icon color */
+            cursor: pointer;
+        }
+
+        .search-results {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+            max-height: 300px; /* Set a maximum height for vertical scrolling */
+        }
+
+        .search-results article {
+            display: flex;
+            align-items: center;
+            min-width: 300px; /* Adjust the width as needed */
+            margin-right: 10px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .search-results img {
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 10px;
+        }
+
+        .search-results div {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .search-results h3 {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        .search-results p {
+            font-size: 10px;
+            line-height: 1.2;
+            color: #555;
+        }
+
+        .search-results a {
+            display: inline-block;
+            padding: 3px 8px;
+            background: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 10px;
+            transition: background 0.3s;
+        }
+
+        .search-results a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img alt="Logo" class="logo" src="https://imgur.com/4PV55Jl.png" />
+        <h1>Sports TV 📺</h1>
+        <!-- ... existing header code ... -->
+
+
+
+        <nav>
+            <a href="https://sports-tv-2024.blogspot.com/p/contact-us.html">Contact - US</a>
+            <a href="https://sports-tv-2024.blogspot.com/p/about-us.html">Privacy Policy</a>
+        </nav>
+    </header>
+  <br>
+  <center>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <span class="search-icon" onclick="performSearch()">🔍</span> <!-- Replace with your search icon or HTML entity -->
+    </div>
+  </center>
+  
+  <center>
+    <!-- Add a container for search results -->
+    <div class="search-results" id="searchResults"></div>
+  </center>
+  
+    <main>
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="INVSEN" src="https://v3img.voot.com/resizeMedium,w_1090,h_613/v3Storage/assets/1_test_ind_vs_eng_carousel-1706119421108.jpg" />
+            </div>
+            <h3>🇮🇳 vs 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h3>
+            <p>Test League 2024</p>
+            <center><a href="http://tinyurl.com/yl9ena8s">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="WPL" src="https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Women%27s_Premier_League.svg/800px-Women%27s_Premier_League.svg.png" />
+            </div>
+            <h3>WPL Live</h3>
+            <p>Women's Premier League</p>
+            <center><a href="https://ipwpl2024.blogspot.com/2024/02/wpl.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>   
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="TV24" src="https://i.imgur.com/5JSQvpR.png"/>
+            </div>
+            <h3>TV Channels</h3>
+            <p>All live TV Channels 24X7 </p>
+            <center><a href="https://tvchannel24x7.blogspot.com/2024/01/TV24X7.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+        <!--<article class="video-card">
+            <div class="video-player">
+                <img alt="BB24" src="https://upload.wikimedia.org/wikipedia/en/9/92/Bigg_Boss_17.png?20230925000055" />
+            </div>
+            <h3>Bigg Boss 17</h3>
+            <p>24 Hrs (Live - Multi Cam)</p>
+            <center><a href="https://biggbossblogspottv.blogspot.com/2024/01/bb24hrchannel.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="BBEP" src="https://upload.wikimedia.org/wikipedia/en/9/92/Bigg_Boss_17.png?20230925000055" />
+            </div>
+            <h3>Bigg Boss 17</h3>
+            <p>Season 17 All Episodes</p>
+            <center><a href="https://biggbossblogspottv.blogspot.com/2023/10/bigg-boss-tv.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>-->
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="astro" src="https://i.imgur.com/AhYxSmD.png" />
+            </div>
+            <h3>astro CRICKET</h3>
+            <p>Cricket league</p>
+            <center><a href="https://astrocricketl.blogspot.com/2023/12/astro.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="IPL" src="https://i.imgur.com/zYxgwfK.png" />
+            </div>
+            <h3>IPL - 2024</h3>
+            <p>Cricket league</p>
+            <center><a href="https://invsaut20.blogspot.com/2023/12/ipl24auction.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="Saudi Pro League" src="https://i.imgur.com/bZgenHk.png" />
+            </div>
+            <h3>Saudi Pro League</h3>
+            <p>Football league</p>
+            <center><a href="https://football26q.blogspot.com/2023/12/saudi-pro-league.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="Laliga League" src="https://i.imgur.com/qGH3GeC.png" />
+            </div>
+            <h3>LaLiga</h3>
+            <p>Football league</p>
+            <center><a href="https://laliga24f.blogspot.com/2024/01/laliga.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="EFL" src="https://i.imgur.com/BdNB15Z.png" />
+            </div>
+            <h3>EFL Cup</h3>
+            <p>Football competition</p>
+            <center><a href="https://eflcup2024.blogspot.com/2024/01/efl.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="FIFA-2026" src="https://i.imgur.com/A4tTSDk.png" />
+            </div>
+            <h3>FIFA - 2026</h3>
+            <p><small>Fédération Internationale De Football Association</small></p>
+            <center><a href="https://fifa-2620.blogspot.com/2023/12/fifa.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="Copa" src="https://imgur.com/eJ1IEnz.png" />
+            </div>
+            <h3>Copa del Rey</h3>
+            <p>Copa de la Coronación</p>
+            <center><a href="https://copadelray24.blogspot.com/2024/01/copa.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+         <article class="video-card">
+            <div class="video-player">
+                <img alt="FA Cup" src="https://imgur.com/Epbx78L.png" />
+            </div>
+            <h3>FA Cup</h3>
+            <p>Football Association Challenge Cup</p>
+            <center><a href="https://facup2024.blogspot.com/2024/01/facup.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+      
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="Premier League" src="https://i.imgur.com/zOW2pFu.png" />
+            </div>
+            <h3>Premier League</h3>
+            <p>English football league</p>
+            <center><a href="https://madstream.live/sports/premierleague.php">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="UEFA" src="https://i.imgur.com/qwVhRpB.png" />
+            </div>
+            <h3>UEFA</h3>
+            <p>UEFA Champions League</p>
+            <center><a href="https://madstream.live/sports/uefa.php">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="Formula 1" src="https://i.imgur.com/E5NfmPC.png" />
+            </div>
+            <h3>F1 🏎️</h3>
+            <p>FORMULA 1®</p>
+            <center><a href="https://formula-1-2024.blogspot.com/2024/01/f1.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="Moto GP" src="https://i.imgur.com/KTJqtok.png" />
+            </div>
+            <h3>Moto - GP</h3>
+            <p>Grand Prix Motorcycle Racing</p>
+            <center><a href="https://motogp20-24.blogspot.com/2024/01/motogp.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+
+        <article class="video-card">
+            <div class="video-player">
+                <img alt="NBA" src="https://imgur.com/IGoOBV8.png" />
+            </div>
+            <h3>NBA</h3>
+            <p>National Basketball Association</p>
+            <center><a href="https://nbabasketball02.blogspot.com/2023/11/NBA.html">𝗪𝗮𝘁𝗰𝗵 𝗡𝗼𝘄</a></center>
+        </article>
+    </main>
+    <footer>&copy; 2024 Sports TV 📺 | Designed by UW</footer><br><br>
+    <div class="watermark">Created by ULTRAWEBS(HM) &copy; 2024</div>
+ 
+    <script>
+        // JavaScript for search functionality
+        function performSearch() {
+            var input = document.getElementById('searchInput').value.toLowerCase();
+            var articles = document.querySelectorAll('.video-card');
+            var resultsContainer = document.getElementById('searchResults');
+            var resultsHTML = '';
+
+            articles.forEach(function (article) {
+                var title = article.querySelector('h3').innerText.toLowerCase();
+                var description = article.querySelector('p').innerText.toLowerCase();
+
+                if (title.includes(input) || description.includes(input)) {
+                    resultsHTML += '<article class="video-card">' + article.innerHTML + '</article>';
+                }
+            });
+
+            if (resultsHTML === '') {
+                resultsHTML = '<p>No results found.</p>';
+            }
+
+            resultsContainer.innerHTML = resultsHTML;
+        }
+    </script>
+</body>
+
+</html>
