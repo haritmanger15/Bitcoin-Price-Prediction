@@ -30,6 +30,7 @@
             max-width: 100%;
             overflow: hidden;
             border-radius: 0px;
+            margin-bottom: 5px;
         }
 
         header img {
@@ -45,12 +46,26 @@
             padding: 10px;
             background-color: #333;
             margin-top: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+            margin: 0 auto;
+        }
+
+                /* Media query for larger screens (desktop) */
+        @media only screen and (min-width: 601px) {
+            #container {
+                max-width: 80%;
+                /* Set width to 80% for desktop */
+            }
         }
 
         #player-container {
-            max-width: 100%;
             border-radius: 10px;
             overflow: hidden;
+            /* Center align the container */
+            margin: 0 auto;
+            /* Set initial width to 100% for mobile */
+            max-width: 100%;
         }
 
         #video {
@@ -75,7 +90,6 @@
             z-index: 9999;
         }
 
-
         footer {
             font-family: 'Titillium Web', sans-serif;
             background-color: red;
@@ -84,6 +98,44 @@
             padding: 1em;
             margin-top: 05px;
             font-weight: bold;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .custom-img {
+                width: 100%;
+                /* Set width to 100% for smaller screens */
+            }
+        }
+
+        /* Media query for larger screens */
+        @media only screen and (min-width: 601px) {
+            .custom-img {
+                max-width: 50%;
+                /* Set maximum width to 100% for larger screens */
+            }
+        }
+
+        /* Set initial width to 100% for all screens */
+        .fig-img {
+            width: 100%;
+            height: auto;
+            /* Ensure aspect ratio is maintained */
+        }
+
+        /* Media query for smaller screens (mobile) */
+        @media only screen and (max-width: 600px) {
+            .fig-img {
+                max-width: 100%;
+                /* Set maximum width to 100% for mobile */
+            }
+        }
+
+        /* Media query for larger screens (desktop) */
+        @media only screen and (min-width: 601px) {
+            .fig-img {
+                max-width: 80%;
+                /* Set maximum width to 80% for desktop */
+            }
         }
 
         h1,
@@ -112,6 +164,10 @@
         }
 
         p {
+            text-align: justify;
+        }
+
+        ul,li{
             text-align: justify;
         }
 
@@ -170,7 +226,7 @@
             padding: 0 10px;
         }
 
-        .custom-img {
+        .custom-img2 {
             border-radius: 3px;
         }
 
@@ -326,24 +382,25 @@
             <script type="text/javascript">
                 (window.f1widgets ||= []).push({ width: 300, height: 80, lang: "en" });
             </script>
-        </center><br>
+        </center>
 
         <center>
             <br />
             <h2 class="custom-title">
                 <a href="United-States.png">
-                    <img class="custom-img" border="0" width="35"
+                    <img class="custom-img2" border="0" width="35"
                         src="https://media.formula1.com/image/upload/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/united-states-of-america-flag.png.transform/1col-retina/image.png"
                         alt="United-States Flag" />
                 </a>
                 Miami International Autodrome
             </h2>
-            <br />
+            <!-- Modify your image tag to add a class -->
             <a
                 href="https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Miami_Circuit.png">
-                <img alt="" border="0" width="500" data-original-height="507" data-original-width="800"
+                <img class="custom-img" alt="f1-tracks" border="0" data-original-height="507" data-original-width="800"
                     src="https://media.formula1.com/image/upload/f_auto/q_auto/v1677244985/content/dam/fom-website/2018-redesign-assets/Circuit%20maps%2016x9/Miami_Circuit.png"
-                    style="border-radius: 5px;" /> </a><br /><br />
+                    style="border-radius: 5px;" />
+            </a>
             <p style="font-family: 'Titillium Web', sans-serif; text-align: center;">
                 <strong>City:</strong> Miami<br />
                 <strong>Laps:</strong> 57<br />
@@ -352,20 +409,21 @@
                 <strong>Lap record:</strong> 1:29.708
                 <small><b>Max Verstappen (2023)</b></small><br />
             </p>
-            <br />
         </center>
 
         <h2 style="float:left; margin-right:20px;">
             MIAMI GP: ALL YOU NEED TO KNOW
         </h2>
         <figure style="float:right;">
-            <img src="https://www.visacashapprb.com/wp-content/uploads/2022/05/miami-grand-prix-map-scuderia-alphatauri.png"
-                alt="Shanghai International Circuit" width="600" height="300" />
+            <img class="fig-img"
+                src="https://www.visacashapprb.com/wp-content/uploads/2022/05/miami-grand-prix-map-scuderia-alphatauri.png"
+                alt="Shanghai International Circuit" width="500" height="300" />
             <figcaption>
                 <center>⚲ Miami International Autodrome, USA</center>
             </figcaption>
         </figure>
-        <p><br /></p>
+        <p><br /><br />
+        </p>
         <p>
             <strong>For the first time since 1959</strong>, Formula 1 returns to
             Florida, for a brand new event, the <em>Miami Grand Prix</em>.
@@ -536,7 +594,7 @@
     </a>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity=" strict" crossorigin="anonymous"></script>
     <div class="watermark">Website created by UltraWebs (HM) © 2024</div>
-    <footer>F1 TV © 2024 | Designed by UW</footer><br>
+    <footer>F1 TV © 2024 | Designed by UW</footer>
 </body>
 
 </html>
