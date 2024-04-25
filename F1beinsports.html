@@ -593,9 +593,35 @@
             </svg>
         </div>
     </a>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity=" strict" crossorigin="anonymous"></script>
     <div class="watermark">Website created by UltraWebs (HM) © 2024</div>
     <footer>F1 TV © 2024 | Designed by UW</footer>
 </body>
+<script>
+    // Function to prevent right-click menu
+    document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+    });
 
+    // Function to prevent keyboard shortcuts for inspecting elements
+    document.onkeydown = function(e) {
+        // Disable F12 key
+        if (event.keyCode == 123) {
+            return false;
+        }
+        // Disable Ctrl+Shift+I and Ctrl+Shift+C key combinations
+        if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0))) {
+            return false;
+        }
+        // Disable Ctrl+Shift+J key combination
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        // Disable Ctrl+Shift+U key combination
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
+    };
+</script>
 </html>
