@@ -16,7 +16,7 @@ Cryptocurrency markets are highly volatile, making accurate price predictions ch
 Clone the repository and install the necessary dependencies:
 
 ```bash
-git clone https://github.com/yourusername/bitcoin-price-prediction.git
+git clone https://github.com/haritmanger15/bitcoin-price-prediction.git
 cd bitcoin-price-prediction
 pip install -r requirements.txt
 ```
